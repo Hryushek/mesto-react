@@ -25,8 +25,8 @@ class Api {
           method: 'PATCH',
           headers: this._headers,
           body: JSON.stringify({
-              name: userInfo.fullName,
-              about: userInfo.bio
+              name: userInfo.name,
+              about: userInfo.about
           }),
       }).then(this._handleResponse)
   }
@@ -62,6 +62,11 @@ class Api {
           headers: this._headers,
       }).then(this._handleResponse);
   }
+
+  changeLikeCardStatus(obj, variable) {
+    this._status = variable ? this.like(obj._id) : this.dislike(obj._id);
+    return this._status;
+}
 
   dislike(id) {
       return fetch(`${this._baseUrl}/cards/${id}/likes`, {
