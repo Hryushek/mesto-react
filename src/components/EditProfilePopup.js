@@ -23,7 +23,7 @@ const EditProfilePopup = ({isOpen, onClose, onUpdateUser}) => {
             setName(currentUser.name);
             setWorkplace(currentUser.about);
         }
-    }, [currentUser])
+    }, [currentUser, isOpen])
 
     const onNameChange = (e) => {
         setName(e.target.value)

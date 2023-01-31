@@ -10,6 +10,7 @@ const EditAvatarPopup = ({ isOpen, onClose, onUpdateAvatar }) => {
         onUpdateAvatar({
             avatar: inputRef.current.value,
         });
+        inputRef.current.value = ''
     }
 
     return (
